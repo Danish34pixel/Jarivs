@@ -38,7 +38,12 @@ const Costumize2 = () => {
       const result = await axios.post(
         `${ServerUrl}/api/user/updateassisment`,
         formData,
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json", // or "multipart/form-data" if using FormData
+          },
+        }
       );
       console.log(result.data);
       setUserData(result.data);

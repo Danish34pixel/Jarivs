@@ -51,7 +51,12 @@ const SignUp = () => {
           email,
           password,
         },
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json", // or "multipart/form-data" if using FormData
+          },
+        }
       );
 
       setIsLoading(false);
@@ -90,7 +95,12 @@ const SignUp = () => {
           password,
           email,
         },
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json", // or "multipart/form-data" if using FormData
+          },
+        }
       );
       setUserData(result.data);
       setIsLoading(false);

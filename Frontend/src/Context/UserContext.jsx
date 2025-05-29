@@ -14,6 +14,9 @@ const UserContext = ({ children }) => {
       console.log("Fetching current user...");
       const result = await axios.get(`${ServerUrl}/api/auth/currentUser`, {
         withCredentials: true,
+        headers: {
+          "Content-Type": "application/json", // or "multipart/form-data" if using FormData
+        },
       });
       // console.log("Current user response:", result.data);
       if (result.data && result.data.user) {
@@ -30,7 +33,12 @@ const UserContext = ({ children }) => {
         {
           command,
         },
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json", // or "multipart/form-data" if using FormData
+          },
+        }
       );
       return result.data;
     } catch (error) {

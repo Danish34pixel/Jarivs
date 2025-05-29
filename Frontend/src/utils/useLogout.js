@@ -11,7 +11,12 @@ export function useLogout(ServerUrl, setUserData) {
       await axios.post(
         `${ServerUrl}/api/auth/LogOut`,
         {},
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          headers: {
+            "Content-Type": "application/json", // or "multipart/form-data" if using FormData
+          },
+        }
       );
       setUserData(null);
       navigate("/");

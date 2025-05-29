@@ -9,7 +9,12 @@ export const getGeminiResponse = async (userInput) => {
     const response = await axios.post(
       `${ServerUrl}/api/gemini/respond`,
       { message: userInput },
-      { withCredentials: true }
+      {
+        withCredentials: true,
+        headers: {
+          "Content-Type": "application/json", // or "multipart/form-data" if using FormData
+        },
+      }
     );
     // console.log("this is rawa response by geminin", response);
     return response?.data?.reply || "I'm not sure how to respond.";
