@@ -24,7 +24,7 @@ export const signUp = async (req, res) => {
       httpOnly: true,
       maxAge: 365 * 24 * 60 * 60 * 1000, // Extended to 1 year
       secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      sameSite: "none",
     });
 
     res.status(201).json({ user });
@@ -51,7 +51,7 @@ export const LogIn = async (req, res) => {
       httpOnly: true,
       maxAge: 365 * 24 * 60 * 60 * 1000, // Extended to 1 year
       secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      sameSite: "none",
     });
 
     res.status(200).json({ user });
