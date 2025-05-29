@@ -5,7 +5,7 @@ dotenv.config();
 import express from "express";
 import connectdb from "./config/db.js";
 import authRouter from "./Routes/Auth.Routes.js";
-import UserRouter from "./Routes/User.routes.js";
+import UserRouter from "./Routes/User.Routes.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import geminiresponse from "./Gemini.js";
