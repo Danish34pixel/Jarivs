@@ -123,7 +123,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-[#5a2e17] via-[#3a1c0e] via-[#1e0d06] to-[#1e0d06] text-white relative overflow-hidden">
       {/* Three.js Background */}
       <div ref={mountRef} className="absolute inset-0 z-0" />
 
@@ -131,9 +131,13 @@ const Home = () => {
       <nav className="relative z-10 px-6 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <Bot className="w-8 h-8 text-purple-400" />
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              VirtualAI
+            <img
+              className="w-10 h-10 rounded-full object-cover border-2 border-[#5a2e17] shadow-lg"
+              src="/my name is danish khan give a logo related to my name.jpg"
+              alt="DK Industries Logo"
+            />
+            <span className="text-xl font-bold bg-black bg-clip-text text-transparent">
+              DK Industries
             </span>
           </div>
 
@@ -201,16 +205,14 @@ const Home = () => {
       <div className="relative z-10 px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
-            <div className="inline-flex items-center px-4 py-2 bg-purple-500 bg-opacity-20 rounded-full border border-purple-500 border-opacity-30 mb-6">
-              <Sparkles className="w-4 h-4 mr-2 text-purple-400" />
-              <span className="text-sm font-medium">
-                Powered by Advanced AI
-              </span>
+            <div className="inline-flex items-center px-4 py-2 bg-black bg-opacity-20 rounded-full border border-white border-opacity-30 mb-6">
+              <Sparkles className="w-4 h-4 mr-2 text-red-900" />
+              <span className="text-sm font-medium">Powered by DK</span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Your Perfect
-              <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="block bg-[#4B3832] bg-clip-text text-transparent">
                 Virtual Assistant
               </span>
             </h1>
@@ -224,11 +226,11 @@ const Home = () => {
           {/* Start Button */}
           <button
             onClick={handleStartClick}
-            className="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-lg font-semibold hover:from-purple-500 hover:to-pink-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25"
+            className="group relative inline-flex items-center px-8 py-4 bg-black rounded-full text-lg font-semibold hover:from-black hover:to-black transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-black"
           >
             Get Started
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-20 transition-opacity blur-xl"></div>
+            <div className="absolute inset-0 rounded-full bg-black opacity-0 group-hover:opacity-20 transition-opacity blur-xl"></div>
           </button>
         </div>
       </div>
@@ -268,7 +270,7 @@ const Home = () => {
       {/* CTA Section */}
       <div className="relative z-10 px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="p-8 rounded-3xl bg-gradient-to-r from-purple-600 to-pink-600 bg-opacity-20 backdrop-blur-sm border border-purple-500 border-opacity-30">
+          <div className="p-8 rounded-3xl bg-gradient-to-r from-[#5a2e17] via-[#3a1c0e] to-[#1e0d06] bg-opacity-20 backdrop-blur-sm border border-purple-500 border-opacity-30">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Get Started?
             </h2>
@@ -291,7 +293,6 @@ const Home = () => {
       <footer className="relative z-10 px-6 py-8 border-t border-white border-opacity-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <Bot className="w-6 h-6 text-purple-400" />
             <span className="font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               VirtualAI
             </span>
