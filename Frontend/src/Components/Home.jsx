@@ -128,36 +128,36 @@ const Home = () => {
       <div ref={mountRef} className="absolute inset-0 z-0" />
 
       {/* Navigation */}
-      <nav className="relative z-10 px-6 py-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-2">
+      <nav className="relative z-10 px-4 py-3 sm:px-6 sm:py-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
+          <div className="flex items-center space-x-2 mb-2 sm:mb-0">
             <img
-              className="w-10 h-10 rounded-full object-cover border-2 border-[#5a2e17] shadow-lg"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-[#5a2e17] shadow-lg"
               src="/my name is danish khan give a logo related to my name.jpg"
               alt="DK Industries Logo"
             />
-            <span className="text-xl font-bold bg-black bg-clip-text text-transparent">
+            <span className="text-lg sm:text-xl font-bold bg-gradient-to-r from-[#5a2e17] to-[#3a1c0e] bg-clip-text text-transparent">
               DK Industries
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-6 sm:space-x-8">
             <a
               href="#features"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-purple-400 transition-colors text-base sm:text-lg"
             >
               Features
             </a>
             <a
               href="#about"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-purple-400 transition-colors text-base sm:text-lg"
             >
               About
             </a>
             <a
               href="#contact"
-              className="hover:text-purple-400 transition-colors"
+              className="hover:text-purple-400 transition-colors text-base sm:text-lg"
             >
               Contact
             </a>
@@ -165,7 +165,7 @@ const Home = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-purple-400"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -178,22 +178,25 @@ const Home = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-slate-800 bg-opacity-95 backdrop-blur-sm p-6 space-y-4">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-slate-800 bg-opacity-95 backdrop-blur-sm p-6 space-y-4 flex flex-col items-center">
             <a
               href="#features"
-              className="block hover:text-purple-400 transition-colors"
+              className="block hover:text-purple-400 transition-colors text-lg"
+              onClick={() => setIsMenuOpen(false)}
             >
               Features
             </a>
             <a
               href="#about"
-              className="block hover:text-purple-400 transition-colors"
+              className="block hover:text-purple-400 transition-colors text-lg"
+              onClick={() => setIsMenuOpen(false)}
             >
               About
             </a>
             <a
               href="#contact"
-              className="block hover:text-purple-400 transition-colors"
+              className="block hover:text-purple-400 transition-colors text-lg"
+              onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </a>
