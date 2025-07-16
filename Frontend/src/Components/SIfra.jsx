@@ -43,7 +43,7 @@ function SIfra() {
           </div>
           <div className="space-y-2">
             <h2 className="text-xl font-semibold text-white">
-              Initializing SIfra
+              Initializing your AI Assistant
             </h2>
             <p className="text-gray-400 text-sm">
               Establishing secure connection...
@@ -83,50 +83,57 @@ function SIfra() {
       </div>
 
       {/* Status Bar */}
-      <div className="relative z-50 px-6 py-4 border-b border-gray-800/50 backdrop-blur-sm">
-        <div className="flex items-center justify-between max-w-7xl mx-auto">
-          <div className="flex items-center space-x-6">
+      <div className="relative z-50 px-2 sm:px-6 py-3 border-b border-gray-800/50 backdrop-blur-sm">
+        <div className="flex flex-col sm:flex-row items-center justify-between max-w-7xl mx-auto gap-2 sm:gap-0">
+          <div className="flex items-center space-x-3 w-full sm:w-auto justify-between">
             {/* Logo/Brand */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
                 <img
-                  className="w-6 h-6 rounded-full"
+                  className="w-6 h-6 rounded-full object-cover"
                   src="./my name is danish khan give a logo related to my name.jpg"
                   alt=""
                 />
               </div>
-              <h1 className="text-xl font-semibold text-white tracking-tight">
+              <h1 className="text-lg sm:text-xl font-semibold text-white tracking-tight whitespace-nowrap">
                 AI Assistant
               </h1>
             </div>
+            {/* Mobile Logout Button */}
+            <div className="block sm:hidden ml-2">
+              <LogoutButton handleLogout={handleLogout} />
+            </div>
+          </div>
 
-            {/* Connection Status */}
-            <div className="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
+          {/* Connection Status & User Info */}
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full sm:w-auto justify-between sm:justify-end">
+            <div className="flex items-center space-x-2 px-2 py-1.5 rounded-full bg-green-500/10 border border-green-500/20">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               <span className="text-green-400 text-xs font-medium capitalize">
                 {connectionStatus}
               </span>
             </div>
-          </div>
-
-          {/* User Info & Logout */}
-          <div className="flex items-center space-x-4">
             {userData?.name && (
               <div className="text-right">
-                <p className="text-white font-medium text-sm">Welcome back</p>
+                <p className="text-white font-medium text-xs sm:text-sm leading-tight">
+                  Welcome back
+                </p>
                 <p className="text-gray-400 text-xs">{userData.name}</p>
               </div>
             )}
-            <LogoutButton handleLogout={handleLogout} />
+            {/* Desktop Logout Button */}
+            <div className="hidden sm:block">
+              <LogoutButton handleLogout={handleLogout} />
+            </div>
           </div>
         </div>
       </div>
 
       {/* Main Content Area */}
-      <div className="flex-1 relative flex">
+      <div className="flex-1 relative flex flex-col sm:flex-row">
         {/* Left Panel - Assistant Info */}
-        <div className="w-80 relative z-40 border-r border-gray-800/50 backdrop-blur-sm">
-          <div className="h-full overflow-y-auto">
+        <div className="w-full sm:w-80 relative z-40 border-b sm:border-b-0 sm:border-r border-gray-800/50 backdrop-blur-sm">
+          <div className="h-full overflow-y-auto p-2 sm:p-0">
             <AssistantInfoPanel
               userData={userData}
               isListening={isListening}
@@ -137,11 +144,11 @@ function SIfra() {
         </div>
 
         {/* Right Panel - 3D Model */}
-        <div className="flex-1 relative">
+        <div className="flex-1 relative min-h-[300px] sm:min-h-0">
           <ModelCanvas assistantglb={userData?.assistantglb} />
 
           {/* Overlay Controls */}
-          <div className="absolute bottom-6 right-6 z-30">
+          <div className="absolute bottom-4 right-4 z-30 max-w-[90vw]">
             <div className="flex flex-col space-y-3">
               {/* Voice Status Indicator */}
               {isListening && (
