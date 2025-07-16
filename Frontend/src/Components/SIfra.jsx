@@ -89,10 +89,14 @@ function SIfra() {
             {/* Logo/Brand */}
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
+                <img
+                  className="w-6 h-6 rounded-full"
+                  src="./my name is danish khan give a logo related to my name.jpg"
+                  alt=""
+                />
               </div>
               <h1 className="text-xl font-semibold text-white tracking-tight">
-                SIfra Assistant
+                AI Assistant
               </h1>
             </div>
 
